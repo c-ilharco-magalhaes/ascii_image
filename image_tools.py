@@ -4,8 +4,8 @@ from PIL import Image, ImageDraw, ImageFilter
 def read_image(filename):
 	image = Image.open(filename, "r").convert("RGBA")
 	# Optional: Filters can increase contrast.
-	image = image.filter(ImageFilter.SHARPEN)
-	image = image.filter(ImageFilter.EDGE_ENHANCE)
+	# image = image.filter(ImageFilter.SHARPEN)
+	# image = image.filter(ImageFilter.EDGE_ENHANCE)
 	pixels = list(image.getdata())
 	(width, height) = image.size
 	return (pixels, width, height)

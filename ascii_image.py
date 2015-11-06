@@ -21,5 +21,5 @@ if __name__ == '__main__':
 	(pixels, width, height) = read_image("test.png")
 	# Try other letter sequences. Pixel-denser characters (like '#') give sharper results.
 	(output, rgbs) = create_output(pixels, width, height, "GitHub")
-	font = ImageFont.truetype("FreeMonoBold.ttf", 24)
+	font = ImageFont.truetype("FreeMonoBold.ttf", 16)
 	draw_image(output, rgbs, font)
