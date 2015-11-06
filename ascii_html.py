@@ -7,8 +7,16 @@ def generate_html(output, rgbs):
 
 	html = [line_start]
 	for i in range(len(output)):
-		for j in range(len(output[i])):
-			html.append("<span style=\"color: " + hex_rgb(rgbs[i][j]) + ";\">" + output[i][j] + "</span>")
+		line = output[i]
+		j = 0
+		while j < len(line):
+			first = True
+			html.append("<span style=\"color: " + hex_rgb(rgbs[i][j]) + ";\">")
+			while j < len(line) and (first or rgbs[i][j] == rgbs[i][j-1]):
+				first = False
+				html.append(line[j])
+				j += 1
+			html.append("</span>")
 		html.append("<br>")
 	html.append(line_end)
 
