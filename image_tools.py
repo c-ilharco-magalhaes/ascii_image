@@ -36,3 +36,7 @@ def get_spacing(font):
 	# By making vertical and horizontal spacing equal, the image proportion is preserved.
 	max_spacing = max(char_spacing, line_spacing)
 	return (max_spacing, max_spacing)
+
+def hex_rgb(rgb):
+	number = (rgb[0]<<16) + (rgb[1]<<8) + rgb[2]
+	return "#%0.6X" % number
