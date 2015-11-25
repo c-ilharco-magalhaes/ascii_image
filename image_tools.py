@@ -21,7 +21,11 @@ def create_output(pixels, width, height, letters):
 			p = width*i + j
 			line.append(letters[letterIndex])
 			letterIndex = (letterIndex+1)%len(letters)
-			rgbs.append(tuple(list(pixels[p])[0:3]+[255]))
+			if len(pixels[p]) == 3:
+				rgbs.append(tuple(list(pixels[p])[0:3] + [255]))
+			else:
+				rgbs.append(pixels[p])
+
 
 		charOutput.append(line)
 		charRgbs.append(rgbs)
